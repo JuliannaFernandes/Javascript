@@ -11,3 +11,4 @@ let nomeCliente  = 'Julianna';
 nomeCliente = 'Fernandes';
 
 console.log(nomeCliente);
+//Este eu vou apagar
