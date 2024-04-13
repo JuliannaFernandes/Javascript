@@ -1,1 +1,4 @@
-Este repositório contém aulas e projetos para melhorar minhas habilidades em javascript
+### Neste repositório você encontrará:
+ - Registro de aulas de javascript
+ - Projetos para testar e melhorar minhas habilidades!
+
