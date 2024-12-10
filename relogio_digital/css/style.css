@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@500&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+.relogio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display{
+    text-align: center;
+    height: 200px;
+    width: 400px;
+    padding: 20px;
+    line-height: 150px;
+    font-size: 4rem;
+    border-radius: 15px;    
+    text-shadow: 0 0 10px #fff;border: 3px solid #fbeb00;
+    background-color: rgba(58, 58, 58, 0.464);
+}
+
+footer{
+  margin-top: 15px;
+}
