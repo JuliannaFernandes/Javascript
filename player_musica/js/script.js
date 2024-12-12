@@ -39,7 +39,7 @@ const musicas = [
     { 
         nome: 'On my Own', 
         autor: 'Bail Bonds', 
-        src: 'assets/audio/On my Own - Bail Bonds.mp3', 
+        src: 'assets/audio/On My Own - Bail Bonds.mp3', 
         img: 'assets/img/train.jpg'
     },
     { 
@@ -50,8 +50,10 @@ const musicas = [
     },
 ];
 
+
 // Seleção de elementos
 const musica = document.querySelector('audio');
+let indexMusica = 0;
 const btnPlay = document.querySelector('.btn-play');
 const btnPause = document.querySelector('.btn-pause');
 const barraProgresso = document.querySelector('progress');
@@ -60,13 +62,28 @@ const duracaoMusica = document.querySelector('.fimMusica');
 const imagem = document.querySelector('img');
 const nomeMusica = document.querySelector('.descricao h2');
 const autor = document.querySelector('.descricao i');
+const musicaAnterior = document.querySelector('.anterior');
+const proximaMusica = document.querySelector('.proxima');
 
 // Eventos
 btnPlay.addEventListener('click', tocarMusica);
 btnPause.addEventListener('click', pausarMusica);
 musica.addEventListener('timeupdate', atualizarBarra);
 musica.addEventListener('loadedmetadata', atualizarDuracao);
-musica.addEventListener('canplaythrough', atualizarDuracao);
+musica.addEventListener('ended', () => {
+    indexMusica = (indexMusica + 1) % musicas.length;
+    renderizarMusica(indexMusica);
+});
+
+musicaAnterior.addEventListener('click', () => {
+    indexMusica = (indexMusica - 1 + musicas.length) % musicas.length;
+    renderizarMusica(indexMusica);
+});
+
+proximaMusica.addEventListener('click', () => {
+    indexMusica = (indexMusica + 1) % musicas.length;
+    renderizarMusica(indexMusica);
+});
 
 // Funções
 function tocarMusica() {
@@ -84,14 +101,23 @@ function alternarBotaoPlayPause(estaTocando) {
     btnPause.style.display = estaTocando ? 'block' : 'none';
 }
 
+function renderizarMusica(index) {
+    musica.setAttribute('src', musicas[index].src);
+    imagem.setAttribute('src', musicas[index].img);
+    nomeMusica.textContent = musicas[index].nome;
+    autor.textContent = musicas[index].autor;
+    musica.load();
+    tocarMusica();
+}
+
 function atualizarBarra() {
     const progresso = (musica.currentTime / musica.duration) * 100;
-    barraProgresso.style.width = `${Math.floor(progresso)}%`;
-    tempoDecorrido.textContent = formatarTempo(musica.currentTime);
+    barraProgresso.style.width = progresso + '%';
+    tempoDecorrido.textContent = formatarTempo(Math.floor(musica.currentTime));
 }
 
 function atualizarDuracao() {
-    duracaoMusica.textContent = formatarTempo(musica.duration);
+    duracaoMusica.textContent = formatarTempo(Math.floor(musica.duration));
 }
 
 function formatarTempo(segundos) {
