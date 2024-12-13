@@ -1,4 +1,4 @@
-# Descrição do Repositório**
+# Descrição do Repositório
 
 Este repositório foi criado com o intuito de registrar meu aprendizado em JavaScript por meio de aulas, exemplos práticos e projetos. Aqui você encontrará desde conceitos básicos até aplicações mais interativas, desenvolvidas para testar e aprimorar minhas habilidades na linguagem.
 
