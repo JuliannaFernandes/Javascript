@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100vh;
+    background-color: #60719d;
+}
+
+.foto-container{
+    width: 100%;
+    text-align: center;
+
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center; ;
+}
+
+.container > div{
+    cursor: pointer;
+
+}
+
+.botaoVermelho{
+    width: 80px;
+    height: 90px;
+}
+
+p{
+    margin-top: 0;
+}
