@@ -114,7 +114,7 @@ function atualizarBarra() {
     const progresso = (musica.currentTime / musica.duration) * 100;
     barraProgresso.style.width = progresso + '%';
     tempoDecorrido.textContent = formatarTempo(Math.floor(musica.currentTime));
-}
+} 
 
 function atualizarDuracao() {
     duracaoMusica.textContent = formatarTempo(Math.floor(musica.duration));
@@ -126,3 +126,14 @@ function formatarTempo(segundos) {
     return `${minutos}:${segundosRestantes}`;
 }
 
+// Inicializa o player
+renderizarMusica(indexMusica);
+
+musica.pause();
+alternarBotaoPlayPause(); 
+
+const playButton = document.getElementById('playButton');
+playButton.addEventListener('click', () => {
+    musica.play();
+    alternarBotaoPlayPause();
+});
