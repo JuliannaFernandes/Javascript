@@ -17,7 +17,7 @@ Este repositório foi criado com o intuito de registrar meu aprendizado em JavaS
 * Calculadora: Uma aplicação funcional para realizar cálculos básicos.
 * Relógio: Um relógio dinâmico que exibe a hora em tempo real.
 * Player de Música: Um reprodutor de áudio com controles simples para gerenciar suas músicas.
-* SoundBoard: Uma ferramenta interativa com botões para reproduzir sons divertidos. (em andamento)
+* SoundBoard: Uma ferramenta interativa com botões para reproduzir sons divertidos.
 
 
 Sinta-se à vontade para explorar, contribuir ou utilizar como inspiração! 🚀
