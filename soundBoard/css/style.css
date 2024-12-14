@@ -7,6 +7,12 @@
 body, html{
     height: 100vh;
     background-color: #60719d;
+    color: #e2e2e2;
+
+}
+h1{
+    text-align: center;
+    margin: 20px 0 40px 0;
 }
 
 .foto-container{
